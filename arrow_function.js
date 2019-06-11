@@ -21,3 +21,27 @@ function not1(x) {
 const not2 = x => !x;
 
 // return 식을 줄일 수 있음.
+
+// ES5 this bind
+var relationship1 = {
+  name: 'zero',
+  friends: ['nero', 'hero', 'xero'],
+  logFriends: function() {
+    var that = this;  // relationship1을 가리키는 this를 that에 저장
+    this.friends.forEach(function (friend) { // 배열에 담긴 요소를 friend로 지정
+      console.log(that.name, friend);
+    });
+  },
+};
+relationship1.logFriends();
+
+const relationship2 = {
+  name: 'zero',
+  friends: ['nero', 'hero', 'xero'],
+  logFriends() {
+    this.friends.forEach(friend => {
+      console.log(this.name, friend);
+    });
+  },
+};
+relationship2.logFriends();
