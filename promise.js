@@ -9,7 +9,18 @@ const promise = new Promise((resolve, reject) => {
 
 promise
   .then((message) => {
-    console.log(message); // 성공(resolve)인 경우 실행
+    return new Promise((resolve, reject) => {
+       resolve(message);
+    });
+  })
+  .then((message2) => {
+    console.log(message2);
+    return new Promise((resolve, reject) => {
+      resolve(message2);
+    })
+  })
+  .then((message3) => {
+    console.log(message3);
   })
   .catch((error) => {
     console.log(error);   // 실패(reject)인 경우 실행
