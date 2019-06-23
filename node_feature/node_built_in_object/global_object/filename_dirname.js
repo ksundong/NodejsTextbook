@@ -3,4 +3,3 @@ console.log(__dirname);  // current directory's path
 
 // path delimiter(\[windows],/[other-unix]) problem
 // add path module.
-
