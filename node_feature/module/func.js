@@ -8,3 +8,6 @@ function checkOddOrEven(num) {
 }
 
 module.exports = checkOddOrEven;
+
+// exports can be use object, So, func.js can't convert to exports.
+// module.exports and exports has a reference relationship, I recommend not using module.exports and exports in same time.
